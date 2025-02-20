@@ -32,7 +32,7 @@ class Empleados{
         try{
             $insercion = $this->pdo->prepare("delete from tbl_empleados where
             id=:id");
-            $insercion->bindParam(':id', $d);
+            $insercion->bindParam(':id', $id);
             return $insercion->execute();
         }catch(PDOException $e){
             die($e->getMessage());
@@ -43,7 +43,7 @@ class Empleados{
 
         try{
             $insercion = $this->pdo->prepare("update tbl_empleados set nombre=:
-            nombre, edad=:edad, sexo=:sexo telefono=:telefono cargo=:cargo avatar=:avatar where id=:id");
+            nombre, edad=:edad, sexo=:sexo, telefono=:telefono, cargo=:cargo, avatar=:avatar where id=:id");
             $insercion->bindParam(':id', $i);
             $insercion->bindParam(':nombre', $n);
             $insercion->bindParam(':edad', $e);
@@ -60,7 +60,7 @@ class Empleados{
 
     public function update($id, $nombre, $edad, $sexo, $telefono, $cargo, $avatar) {
         $query = "UPDATE tbl_empleados SET 
-            nombre=:nombre, edad=:edad, sexo=:sexo telefono=:telefono cargo=:cargo avatar=:avatar WHERE id = :id";
+            nombre=:nombre, edad=:edad, sexo=:sexo, telefono=:telefono, cargo=:cargo, avatar=:avatar WHERE id = :id";
         $insercion = $this->pdo->prepare($query);
         $insercion->bindParam(':id', $id);
         $insercion->bindParam(':nombre', $nombre);

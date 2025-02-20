@@ -1,3 +1,4 @@
+<?php
 class Conexion {
     private $pdo;
     private $host;
@@ -14,8 +15,7 @@ class Conexion {
     }
     public function conectar(){
     try{
-        $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->
-        nombreBD;charset=utf8",$this->usuario, $this->password);
+        $this->pdo = new PDO("mysql:host=$this->host;dbname=$this->nombreBD;charset=utf8",$this->usuario, $this->password);
         return $this->pdo;
     } catch (PDOException $e) {
         print " <p class=\"aviso\">Error: No puede conectarse con
@@ -24,3 +24,4 @@ class Conexion {
         }
     }
 }
+?>
