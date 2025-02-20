@@ -23,10 +23,10 @@
                 $avatar = $_POST['avatar'];
                 $this->empleadosModel->update($id, $nombre, $edad, $sexo, $telefono, $cargo, $avatar);
                     header("Location: index.php");
-                } else {
-                    $empleados = $this->empleadosModel->getById($id);
+            } else {
+                $empleados = $this->empleadosModel->getById($id);
                 require "Views/edit.php";
-                }
+            }
         }
         
 

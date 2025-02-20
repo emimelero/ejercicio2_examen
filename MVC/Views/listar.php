@@ -32,21 +32,21 @@
         
         </tr>
         <?php foreach ($empleados as $emp): ?>
-        <tr>
-                <td><?= $emp['id'] ?></td>
-                <td><?= $emp['nombre'] ?></td>
-                <td><?= $emp['edad'] ?></td>
-                <td><?= $emp['sexo'] ?></td>
-                <td><?= $emp['cargo'] ?></td>
-                <td><?= $emp['telefono'] ?></td>
-                <td><?= $emp['avatar'] ?></td>
-            <td>e$emp
-                <a href="index.php?action=edit&id=<?= $emp['id'] ?>
-                ">Editar</a>
-                <a href="index.php?action=delete&id=<?= $emp['id']
-                ?>" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
-            </td>
-        </tr>
+            <tr>
+                    <td><?= $emp['id'] ?></td>
+                    <td><?= $emp['nombre'] ?></td>
+                    <td><?= $emp['edad'] ?></td>
+                    <td><?= $emp['sexo'] ?></td>
+                    <td><?= $emp['cargo'] ?></td>
+                    <td><?= $emp['telefono'] ?></td>
+                    <td><?= $emp['avatar'] ?></td>
+                <td>
+                    <a href="index.php?action=edit&id=<?= $emp['id'] ?>
+                    ">Editar</a>
+                    <a href="index.php?action=delete&id=<?= $emp['id']
+                    ?>" onclick="return confirm('¿Estás seguro?')">Eliminar</a>
+                </td>
+            </tr>
         <?php endforeach; ?>
     </table>
 </body>
